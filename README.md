@@ -1,3 +1,6 @@
+## RESET PHOTON
+[reset photon](https://docs.particle.io/tutorials/device-os/led/core/#safe-mode)
+
 # Project3
 
 
