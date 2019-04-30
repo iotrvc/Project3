@@ -62,8 +62,8 @@ Should look like this
 // This #include statement was automatically added by the Particle IDE.
 #include "Adafruit_DHT_Particle.h"
 #include "blynk.h"
-// DHT humidity/temperature sensors
-// Written by Chuck Konkol
+// Example testing sketch for various DHT humidity/temperature sensors
+// Written by ladyada, public domain
 
 #define DHTPIN D2     // what pin we're connected to
 
@@ -78,23 +78,23 @@ Should look like this
 // Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
 
 DHT dht(DHTPIN, DHTTYPE);
-int loopCount;
 
 //DANGER - DO NOT SHARE!!!!
-char auth[] = "blynktoken"; // Put your blynk token here
-
+char auth[] = "ba10c984ee05441db01d4ff597444076"; // Put your blynk token here
+bool run;
 
 void setup() {
      Blynk.begin(auth);
 	Particle.publish("state", "DHTxx test start");
-
+    run = true;
 	dht.begin();
-	loopCount = 0;
 	delay(2000);
 }
 
 void loop() {
+    run = true;
     Blynk.run();
+  
 // Wait a few seconds between measurements.
 //	delay(2000);
 
@@ -114,23 +114,23 @@ void loop() {
 	char *fh;
 	
 	char *hd;
-	 Particle.publish("temps",  String(t1));
+//Particle.publish("temps",  String(t1));
   
 // Check if any reads failed and exit early (to try again).
 	if (isnan(h) || isnan(t) || isnan(f)) {
 		Serial.println("Failed to read from DHT sensor!");
-		return;
+        run = false;
 	}
 	
 	//Incorrect reading due to noice spikes false reading
-   if (t1 > 100 || t1 < 30){
-       Particle.publish("error",  String(t1));
-       	return;
+   if (t1 > 100 || t1 < 0){
+       run = false;
    }
 
 // Compute heat index
 // Must send in temp in Fahrenheit!
-	float hi = dht.getHeatIndex();
+if (run == true){
+    float hi = dht.getHeatIndex();
 	float dp = dht.getDewPoint();
 	float k = dht.getTempKelvin();
 	
@@ -143,9 +143,18 @@ void loop() {
     Blynk.virtualWrite(V1, sf);
      //virtual pin 2 will be the humidity
     Blynk.virtualWrite(V2, sh);
-
+    delay(2000);
+}else{
+     run = true;
+     Particle.publish("errors", String(t1));
+     delay(2000);
+}
 	delay(10000);
 }
+
+
+
+
 
 ```
 - Click Save
