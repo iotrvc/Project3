@@ -55,7 +55,7 @@ Should look like this
 ### Step 4: Create Particle App
 
 - Go to https://build.particle.io/build/new 
-- Title: LightDetect
+- Title: Temp
 - Paste Below Code
 ```
 
@@ -80,12 +80,12 @@ Should look like this
 DHT dht(DHTPIN, DHTTYPE);
 
 //DANGER - DO NOT SHARE!!!!
-char auth[] = "ba10c984ee05441db01d4ff597444076"; // Put your blynk token here
+char auth[] = "pasteblynktokenhere"; // Put your blynk token here
 bool run;
 
 void setup() {
      Blynk.begin(auth);
-	Particle.publish("state", "DHTxx test start");
+	Particle.publish("state", "DHT11 test start");
     run = true;
 	dht.begin();
 	delay(2000);
@@ -101,19 +101,18 @@ void loop() {
 // Reading temperature or humidity takes about 250 milliseconds!
 // Sensor readings may also be up to 2 seconds 'old' (its a 
 // very slow sensor)
+
+// Read Humidity 
 	float h = dht.getHumidity();
 // Read temperature as Celsius
 	float t = dht.getTempCelcius();
 // Read temperature as Farenheit
 	float f = dht.getTempFarenheit();
-	
+// Read Farenheit as int to test later 	
 	int t1 = dht.getTempFarenheit();
-	
+// Read Humidity as int (not using)	
 	int h1 =  dht.getHumidity();
-	
-	char *fh;
-	
-	char *hd;
+
 //Particle.publish("temps",  String(t1));
   
 // Check if any reads failed and exit early (to try again).
@@ -130,22 +129,26 @@ void loop() {
 // Compute heat index
 // Must send in temp in Fahrenheit!
 if (run == true){
+// Read HeatIndex 
     float hi = dht.getHeatIndex();
+// Read DewPoint 
 	float dp = dht.getDewPoint();
+// Read TempKelvin 
 	float k = dht.getTempKelvin();
-	
-	//String timeStamp = Time.timeStr();
-	Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\": %4.2f, \"DP(°C)\": %4.2f, \"HI(°C)\": %4.2f}", h, f, dp, hi));
-	//virtual pin 1 will be the temperature
+//Publish all reading to log
+Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\": %4.2f, \"DP(°C)\": %4.2f, \"HI(°C)\": %4.2f}", h, f, dp, hi));
+//Set int Fahrenheigt and Humidity to String
    String sf(f, 0);
    String sh(h, 0);
-   
+//virtual pin 1 will be the temperature (int)  
     Blynk.virtualWrite(V1, sf);
-     //virtual pin 2 will be the humidity
+//virtual pin 2 will be the humidity (int)
     Blynk.virtualWrite(V2, sh);
+//pause 2 seconds
     delay(2000);
 }else{
      run = true;
+     //if temp above 100 or below 30 then publish false reading (caused by noise)
      Particle.publish("errors", String(t1));
      delay(2000);
 }
