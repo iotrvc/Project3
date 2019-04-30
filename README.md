@@ -62,8 +62,9 @@ Should look like this
 // This #include statement was automatically added by the Particle IDE.
 #include "Adafruit_DHT_Particle.h"
 #include "blynk.h"
-// Example testing sketch for various DHT humidity/temperature sensors
-// Written by ladyada, public domain
+
+//Temp / Humditity using DHT11 sensor
+// Written by Chuck Konkol public domain
 
 #define DHTPIN D2     // what pin we're connected to
 
@@ -154,10 +155,6 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\":
 }
 	delay(10000);
 }
-
-
-
-
 
 ```
 - Click Save
