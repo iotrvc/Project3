@@ -39,7 +39,7 @@ Sensor Pin  | Photon Pin
 
 Should look like this
 
-<img src="ytql18cMRfuZ10OypBj6Pw.jpg" width="500">
+<img src="1E4AAE01-EDB9-4FE4-AF50-1A2EAB607F43.PNG" width="500">
 <br>
 <hr>
 
@@ -49,7 +49,8 @@ Should look like this
 - Log In to Blynk app and press QR button in Projects gallery & SCAN BELOW QR CDOE TO GET PROJECT
 <img src="ytql18cMRfuZ10OypBj6Pw.jpg" width="500">
 - Connect Blynk App to Photon: Tap on Octagon Icon and add your photon under devices
-
+<img src="IMG_1316.jpg" width="500">
+<br>
 
 ### Step 4: Create Particle App
 
