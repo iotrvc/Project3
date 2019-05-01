@@ -21,7 +21,7 @@ Required Parts:
 
 <hr>
 
-### Step 2: Connect Photo Sensor & Resistor to Photon
+### Step 2: Connect Temperature Sensor & Resistor to Photon
 - Connect your sensor onto the Photon. Follow these examples for hooking up common sensors.
 ```
 Sensor Pin  | Photon Pin
