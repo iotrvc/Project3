@@ -54,7 +54,7 @@ Should look like this
 ### Step 4: Create Particle App
 
 - Go to https://build.particle.io/build/new 
-- Title: Temp
+- Title: Monitor_Temperature_Humidity
 - Add Library: Adafruit_DHT_Particle
 - Add Library: blynk
 - Paste Below Code
