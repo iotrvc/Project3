@@ -24,6 +24,7 @@ Required Parts:
 
 ### Step 2: Connect Temperature Sensor & Resistor to Photon
 - Connect your sensor onto the Photon. Follow these examples for hooking up common sensors.
+
 ```
 Sensor Pin  | Photon Pin
        pin1 | VIN (on the left) of the sensor to +5V
@@ -32,6 +33,7 @@ Sensor Pin  | Photon Pin
        Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
        
 ```
+
 #### Set up the hardware
 
 Should look like this
