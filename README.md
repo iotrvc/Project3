@@ -55,6 +55,8 @@ Should look like this
 
 - Go to https://build.particle.io/build/new 
 - Title: Temp
+- Add Library: Adafruit_DHT_Particle
+- Add Library: blynk
 - Paste Below Code
 
 ```
