@@ -54,6 +54,7 @@ Should look like this
 - Go to https://build.particle.io/build/new 
 - Title: Temp
 - Paste Below Code
+
 ```
 
 // This #include statement was automatically added by the Particle IDE.
@@ -154,6 +155,7 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\":
 }
 
 ```
+
 - Click Save
 - Click Flash
 
