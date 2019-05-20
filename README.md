@@ -60,7 +60,7 @@ Should look like this
 - Add Library: blynk
 - Paste Below Code
 
-```
+```cpp
 
 // This #include statement was automatically added by the Particle IDE.
 #include "Adafruit_DHT_Particle.h"
