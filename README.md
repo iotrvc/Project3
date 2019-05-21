@@ -163,6 +163,6 @@ Get App Code: <a href="https://go.particle.io/shared_apps/5ce42756d1a77e0022c05f
 That’s It! You should now see updates in Blynk App
 
 
-
-
+### TROUBLESHOOTING STEPS
+<a href="https://iotrvc.github.io/troubleshooting/" target="blank">Click Here For TroubleShooting Steps</a>
 
