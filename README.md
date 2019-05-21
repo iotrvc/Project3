@@ -12,16 +12,9 @@ Required Parts:
 [link](https://docs.particle.io/tutorials/hardware-projects/maker-kit/#tutorial-3-conference-room-monitor)
 --->
 
-### RESET PHOTON (SAFE MODE & WIFI) 
-[reset photon](https://iotrvc.github.io/reset/)
+### Step 1: SETUP WIFI & RESET PHOTON
 
-### Step 1: Set up your Photon
-- Using Your Computer: Go to particle.io/setup and follow the instructions to create an account and set up your Photon.
-- Using Your Phone & Download the Particle Mobile App [iPhone](https://itunes.apple.com/us/app/particle-build-photon-electron/id991459054?ls=1&mt=8) & [Android](https://play.google.com/store/apps/details?id=io.particle.android.app) to create an account and set up your Photon.
-
-<img src="1.jpg" width="500">
-
-<hr>
+<a href="https://iotrvc.github.io/reset/" target="blank">Click Here</a>
 
 ### Step 2: Connect Temperature Sensor & Resistor to Photon
 - Connect your sensor onto the Photon. Follow these examples for hooking up common sensors.
