@@ -5,7 +5,7 @@
 
 Required Parts:
 <br>- Particle Photon
-<br>- DHT11 Sensorf (link)[https://www.amazon.com/gp/product/B01H3J3H82/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1]
+<br>- DHT11 Sensorf [link](https://www.amazon.com/gp/product/B01H3J3H82/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 <!---
@@ -54,7 +54,6 @@ Should look like this
 - Paste Below Code
 
 ```cpp
-
 // This #include statement was automatically added by the Particle IDE.
 #include "Adafruit_DHT_Particle.h"
 #include "blynk.h"
@@ -77,7 +76,7 @@ Should look like this
 DHT dht(DHTPIN, DHTTYPE);
 
 //DANGER - DO NOT SHARE!!!!
-char auth[] = "pasteblynktokenhere"; // Put your blynk token here
+char auth[] = "BLYNKTOKENHERE"; // Put your blynk token here
 bool run;
 
 void setup() {
@@ -93,7 +92,7 @@ void loop() {
     Blynk.run();
   
 // Wait a few seconds between measurements.
-//	delay(2000);
+delay(2000);
 
 // Reading temperature or humidity takes about 250 milliseconds!
 // Sensor readings may also be up to 2 seconds 'old' (its a 
@@ -118,11 +117,6 @@ void loop() {
         run = false;
 	}
 	
-	//Incorrect reading due to noice spikes false reading
-   if (t1 > 100 || t1 < 0){
-       run = false;
-   }
-
 // Compute heat index
 // Must send in temp in Fahrenheit!
 if (run == true){
@@ -133,20 +127,23 @@ if (run == true){
 // Read TempKelvin 
 	float k = dht.getTempKelvin();
 //Publish all reading to log
-Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\": %4.2f, \"DP(°C)\": %4.2f, \"HI(°C)\": %4.2f}", h, f, dp, hi));
+Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°F)\": %4.2f, \"DP(°C)\": %4.2f, \"HI(°C)\": %4.2f}", h, f, dp, hi));
+
 //Set int Fahrenheigt and Humidity to String
    String sf(f, 0);
    String sh(h, 0);
 //virtual pin 1 will be the temperature (int)  
     Blynk.virtualWrite(V1, sf);
+     Particle.publish("Temp(F)", sf);
 //virtual pin 2 will be the humidity (int)
     Blynk.virtualWrite(V2, sh);
+     Particle.publish("Humidity", sh);
 //pause 2 seconds
     delay(2000);
 }else{
      run = true;
      //if temp above 100 or below 30 then publish false reading (caused by noise)
-     Particle.publish("errors", String(t1));
+     //Particle.publish("errors", String(t1));
      delay(2000);
 }
 	delay(10000);
@@ -155,7 +152,7 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°C)\":
 ```
 
 #### MonitorTemperature_Humidity
-Get App Code: <a href="https://go.particle.io/shared_apps/5ce42756d1a77e0022c05f2a" target="blank">Click Here</a>
+Get App Code: <a href="https://go.particle.io/shared_apps/5cf26c179169f70005bf3085" target="blank">Click Here</a>
 
 - Click Save
 - Click Flash
