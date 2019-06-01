@@ -32,7 +32,7 @@ Sensor Pin  | Photon Pin
 
 Should look like this
 
-<img src="1E4AAE01-EDB9-4FE4-AF50-1A2EAB607F43.PNG" width="500">
+<img src="IMG_1617.JPG" width="500">
 <br>
 <hr>
 
