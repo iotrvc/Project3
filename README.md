@@ -34,6 +34,8 @@ Should look like this
 
 <img src="IMG_1617.JPG" width="500">
 <br>
+<img src="IMG_1619.JPG" width="500">
+<br>
 <hr>
 
 ### Step 3: Setup BLYNK APP
