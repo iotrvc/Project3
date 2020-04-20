@@ -161,7 +161,7 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°F)\":
 ```
 
 #### MonitorTemperature_Humidity
-Get App Code: <a href="https://go.particle.io/shared_apps/5e9d207b93b86c0007c74cde" target="blank">Click Here</a>
+Get App Code: <a href="https://go.particle.io/shared_apps/5e9d26c993b86c000cc74ccd" target="blank">Click Here</a>
 
 - Click Save
 - Click Verify
