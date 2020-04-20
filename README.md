@@ -6,8 +6,9 @@
 Required Parts:
 <br>- Particle Photon
 <br>- DHT11 Sensorf [link](https://www.amazon.com/gp/product/B01H3J3H82/ref=ppx_yo_dt_b_asin_title_o06_s01?ie=UTF8&psc=1)
-<br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 <br>- 3 Male/Female & 3 Male Wires
+<br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
+
 <!---
 [link](https://docs.particle.io/tutorials/hardware-projects/maker-kit/#tutorial-3-conference-room-monitor)
 --->
@@ -157,7 +158,7 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°F)\":
 ```
 
 #### MonitorTemperature_Humidity
-Get App Code: <a href="https://go.particle.io/shared_apps/5cf26c179169f70005bf3085" target="blank">Click Here</a>
+Get App Code: <a href="https://go.particle.io/shared_apps/5e9d207b93b86c0007c74cde" target="blank">Click Here</a>
 
 - Click Save
 - Click Flash
