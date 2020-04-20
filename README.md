@@ -60,6 +60,7 @@ Should look like this
 - Add Library: Adafruit_DHT_Particle
 - Add Library: blynk
 - Paste Below Code
+- On line 88 put your BLYNK auth code where it say s  "BLYNKTOKENHERE" (keep quotes)
 
 ```cpp
 // This #include statement was automatically added by the Particle IDE.
@@ -163,9 +164,12 @@ Particle.publish("readings", String::format("{\"Hum(\%)\": %4.2f, \"Temp(°F)\":
 Get App Code: <a href="https://go.particle.io/shared_apps/5e9d207b93b86c0007c74cde" target="blank">Click Here</a>
 
 - Click Save
+- Click Verify
 - Click Flash
 
 That’s It! You should now see updates in Blynk App
+- Tap the PLAY button in the blynk app
+<img src="5.JPG" width="500">
 
 
 ### TROUBLESHOOTING STEPS
