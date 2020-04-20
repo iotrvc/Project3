@@ -21,10 +21,11 @@ Required Parts:
 
 ```
 Sensor Pin  | Photon Pin
-       pin1 | VIN (on the left) of the sensor to +5V
-       pin2 | D2 middle pin
-       pin3 | D0 (on the right) of the sensor to GROUND
-       Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
+       pin1 | VIN (on the left) of the sensor to +5V (Red)
+       pin2 | D2 middle pin (Yellow)
+       pin3 | GROUND by the D7 pin side of Photon  (Black)
+Resistor
+       Connect a resistor from pin 2 (data) to pin 1 (power) of the sensor
        
 ```
 
@@ -32,9 +33,11 @@ Sensor Pin  | Photon Pin
 
 Should look like this
 
-<img src="IMG_1617.JPG" width="500">
+<img src="1.JPG" width="500">
 <br>
-<img src="IMG_1619.JPG" width="500">
+<img src="2.JPG" width="500">
+<br>
+<img src="3.JPG" width="500">
 <br>
 <hr>
 
