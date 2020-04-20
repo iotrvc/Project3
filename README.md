@@ -47,7 +47,9 @@ Should look like this
 - Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
 - Log In to Blynk app and press QR button in Projects gallery & SCAN BELOW QR CDOE TO GET PROJECT
 <img src="IMG_1317.JPG" width="500">
-- Connect Blynk App to Photon: Tap on Octagon Icon and add your photon under devices
+- Connect Blynk App to YOUR Photon: Tap on Octagon Icon and rename existing to your photon under devices<br>
+- Tap Refresh and then Email<br>
+- Check your Email and save the Auth Token for later use<br>
 <img src="IMG_1316.jpg" width="500">
 <br>
 
